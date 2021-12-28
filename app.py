@@ -49,7 +49,7 @@ def predict():
         # print(Total_stops)
 
         # Airline
-        # AIR ASIA = 0 (not in column)
+        
         Airline=request.form['airline']
         if(Airline=='Air Asia'):
             Air_Asia=1
@@ -294,7 +294,7 @@ def predict():
         
 
         # Destination
-        # Banglore = 0 (not in column)
+      
         Destination = request.form["Destination"]
     
         
@@ -407,9 +407,10 @@ def predict():
         ]])
 
         output=round(prediction[0],2)
+      
         
 
-        return render_template('index.html',prediction_text="Your Flight price is Rs. {}".format(output))
+        return render_template('index.html',prediction_text="Your Flight Price = Rs. {}".format(output))
 
 
     return render_template("index.html")
