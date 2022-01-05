@@ -370,7 +370,7 @@ def predict():
     #    'Source_Chennai', 'Source_Delhi', 'Source_Kolkata', 'Source_Mumbai',
     #    'Destination_Cochin', 'Destination_Delhi', 'Destination_Hyderabad',
     #    'Destination_Kolkata', 'Destination_New Delhi']
-        
+    #this data is using for the prediction of price 
         prediction=model.predict([[
             Total_stops,
             Journey_day,
@@ -408,9 +408,10 @@ def predict():
 
         output=round(prediction[0],2)
       
+
         
 
-        return render_template('index.html',prediction_text="Your Flight Price = Rs. {}".format(output))
+        return render_template('index.html',prediction_text="Your Flight Price = Rs. {}""{:.2f}".format(output))
 
 
     return render_template("index.html")
